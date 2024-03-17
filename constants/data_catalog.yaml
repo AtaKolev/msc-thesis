@@ -1,12 +1,21 @@
 case_edu_bearing_data : 
   {
-    normal_data : 
-    [
-      'raw_data/case_edu_bearing_data/normal_data/bearing_at_1730_rpm_case_edu.mat',
-      'raw_data/case_edu_bearing_data/normal_data/bearing_at_1750_rpm_case_edu.mat',
-      'raw_data/case_edu_bearing_data/normal_data/bearing_at_1772_rpm_case_edu.mat',
-      'raw_data/case_edu_bearing_data/normal_data/bearing_at_1797_rpm_case_edu.mat'
-    ],
+    normal_data : {
+      raw_paths : [
+        'raw_data/case_edu_bearing_data/normal_data/bearing_at_1730_rpm_case_edu.mat',
+        'raw_data/case_edu_bearing_data/normal_data/bearing_at_1750_rpm_case_edu.mat',
+        'raw_data/case_edu_bearing_data/normal_data/bearing_at_1772_rpm_case_edu.mat',
+        'raw_data/case_edu_bearing_data/normal_data/bearing_at_1797_rpm_case_edu.mat'
+      ],
+      processed_paths : [
+        'processed_data/case_edu_bearing_data/bearing_at_1730_rpm_case_edu.csv',
+        'processed_data/case_edu_bearing_data/bearing_at_1750_rpm_case_edu.csv',
+        'processed_data/case_edu_bearing_data/bearing_at_1772_rpm_case_edu.csv',
+        'processed_data/case_edu_bearing_data/bearing_at_1797_rpm_case_edu.csv',
+      ],
+      rpms : ['1730', '1750', '1772', '1797'],
+      hps : ['3', '2', '1', '0']
+    },
     fault_data : {
       base_path : 'raw_data/case_edu_bearing_data/',
       folders : ['12k_drive_end_bearing_fault_data', '12k_fan_end_bearing_fault_data', '48k_drive_end_bearing_fault_data'],
@@ -15,5 +24,9 @@ case_edu_bearing_data :
       RPMs : ['1797', '1772', '1750', '1730'],
       file_types : ['IR', 'BALL', 'CENTERED', 'ORTHOGONAL', 'OPPOSITE'],
       extension : '.mat'
-    }
+    },
+    processed_fault_data : {folder : 'processed_data/case_edu_bearing_data/',
+                            extension : '.csv'},
+    processed_normal_data : {folder : 'processed_data/case_edu_bearing_data/normal_data/',
+                             extension : '.csv'}
   }
