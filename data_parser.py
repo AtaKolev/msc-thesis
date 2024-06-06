@@ -126,6 +126,9 @@ class CaseEduBearingData:
         except:
             return 0 # if the method failed, return 0
         
+    def create_final_datasets(self):
+        pass
+        
     def main(self):
         '''
         The main function of the parser, using the default arguments of the other methods,
