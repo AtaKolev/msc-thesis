@@ -216,3 +216,30 @@ case_edu_bearing_data :
       }
     }
   }
+
+mfpt_bearing_data : 
+     {
+          baseline : ['raw_data/MFPT_fault_dataset/1 - Three Baseline Conditions/baseline_1.mat',
+                    'raw_data/MFPT_fault_dataset/1 - Three Baseline Conditions/baseline_2.mat',
+                    'raw_data/MFPT_fault_dataset/1 - Three Baseline Conditions/baseline_3.mat'],
+          outer_race_faults : ['raw_data/MFPT_fault_dataset/2 - Three Outer Race Fault Conditions/OuterRaceFault_1.mat',
+                              'raw_data/MFPT_fault_dataset/2 - Three Outer Race Fault Conditions/OuterRaceFault_2.mat',
+                              'raw_data/MFPT_fault_dataset/2 - Three Outer Race Fault Conditions/OuterRaceFault_3.mat'],
+          outer_race_fault_load_variaton : ['raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_1.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_2.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_3.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_4.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_5.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_6.mat',
+                                   'raw_data/MFPT_fault_dataset/3 - Seven More Outer Race Fault Conditions/OuterRaceFault_vload_7.mat'],
+          inner_race_faults : ['raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_1.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_2.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_3.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_4.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_5.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_6.mat',
+                              'raw_data/MFPT_fault_dataset/4 - Seven Inner Race Fault Conditions/InnerRaceFault_vload_7.mat'],
+          real_world_examples : ['raw_data/MFPT_fault_dataset/6 - Real World Examples/IntermediateSpeedBearing.mat',
+                              'raw_data/MFPT_fault_dataset/6 - Real World Examples/OilPumpBearing.mat',
+                              'raw_data/MFPT_fault_dataset/6 - Real World Examples/PlanetBearing.mat']
+     }

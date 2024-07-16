@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import scipy.io
+from scipy.io import loadmat
 import yaml_parser
 import os
 from helper_functions import HelperFunctions
@@ -24,7 +24,7 @@ class CaseEduBearingData:
         Returns:
             None
         '''
-        self.mat_file_loader = scipy.io.loadmat # the function to read the .mat file
+        self.mat_file_loader = loadmat # the function to read the .mat file
         self.data_catalog = yaml_parser.YAMLParser.read_yaml_file('D:\Repositories\msc-thesis\constants\data_catalog.yaml') # load the .mat files paths and names
 
     def process_fault_data_to_csv(self, save = True, return_df = False):
@@ -149,6 +149,75 @@ class CaseEduBearingData:
         else:
             print("Normal data could not be parsed! Data not saved!")
 
+class MFPTData:
+    '''
+    Class to parse case.edu bearing data from .mat to .csv file and save it.
+    https://engineering.case.edu/bearingdatacenter/download-data-file - link to download the data
+    Methods:
+    process_fault_data_to_csv() - processes the data where the bearing has a fault
+    process_normal_data_to_csv() - process the normal bearing data, without a fault
+    main() - the main function, where all methods are called 
+    '''
+    def __init__(self):
+        '''
+        The initializer method for the class. 
+        Initializes two attributes, the mat_file_loader, which is used to read .mat files in python
+        and the data_catalog consisting of paths and names for the files to be used as constants.
+        Args:
+            None
+        Returns:
+            None
+        '''
+        self.mat_file_loader = loadmat # the function to read the .mat file
+        self.data_catalog = yaml_parser.YAMLParser.read_yaml_file('D:\Repositories\msc-thesis\constants\data_catalog.yaml') # load the .mat files paths and names
+
+    def load_path_to_df(self, file_path):
+
+        mat_data = self.mat_file_loader(file_path)
+
+        # Extract the dictionary
+        bearing_data = mat_data.get('bearing')
+
+        # Extract the gs field properly from its nested structure
+        gs_data = bearing_data['gs'][0, 0].squeeze()
+
+        # Extract other fields
+        sr = bearing_data['sr'].item()
+        load = bearing_data['load'].item()
+        rate = bearing_data['rate'].item()
+
+        # Broadcast scalar values to match the length of gs
+        length = len(gs_data)
+        sr_array = np.full(length, sr)
+        load_array = np.full(length, load)
+        rate_array = np.full(length, rate)
+
+        # Create a DataFrame from the extracted data
+        df = pd.DataFrame({
+            'gs': gs_data,
+            'sr': sr_array,
+            'load': load_array,
+            'rate': rate_array
+        })
+        return df
+
+    def main(self):
+
+        folders_paths = self.data_catalog['mfpt_bearing_data']
+        path_to_save = 'parsed_data/MFPT/'
+        
+        for folder, paths in zip(folders_paths, list(folders_paths.values())):
+            for path in paths:
+                try:
+                    final_path = path_to_save + folder + '/' + path.split('/')[-1].split('.')[0] + '.csv'
+                    df = self.load_path_to_df(path)
+                    df.to_csv(final_path, index = False)
+                    print(f"File {final_path} created. Continuing...")
+                except Exception as e:
+                    print(f"File {path} not parsed. Reason: {e}")
+
+        
+               
 
 if __name__ == '__main__': # if the function is called within this file, execute this
     case_edu_parser = CaseEduBearingData() # Initialize the class' object
