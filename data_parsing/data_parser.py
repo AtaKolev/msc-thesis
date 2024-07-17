@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 from scipy.io import loadmat
-import yaml_parser
+import server.app.yaml_parser as yaml_parser
 import os
-from helper_functions import HelperFunctions
+from data_parsing.helper_functions import HelperFunctions
 
 class CaseEduBearingData:
     '''
