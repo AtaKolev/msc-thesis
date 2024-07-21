@@ -1,0 +1,11 @@
+failures_dict : {
+                0 : 'None',
+                1 : 'drive_end',
+                2 : 'fan_end'
+}
+elements_failure_dict : {
+                0 : 'None'
+                1 : 'OR',
+                2 : 'BALL',
+                3 : 'IR'
+}
