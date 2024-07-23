@@ -1,0 +1,20 @@
+placeholder2024-07-21 21:56:33,607 - ERROR - send_test_email: Send test email failed!
+2024-07-21 21:56:33,607 - ERROR - ================
+2024-07-21 21:56:33,607 - ERROR - ERROR TRACEBACK:
+2024-07-21 21:56:33,607 - ERROR - ================
+2024-07-21 21:56:33,607 - ERROR - Traceback (most recent call last):
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 111, in send_test_email
+    send_email.send_email("RBD: Test email", message = message, recipient='atanaskolevv01@gmail.com')
+AttributeError: module 'send_email' has no attribute 'send_email'
+
+2024-07-21 21:56:33,609 - ERROR - ================
+2024-07-21 21:56:46,509 - ERROR - send_test_email: Send test email failed!
+2024-07-21 21:56:46,509 - ERROR - ================
+2024-07-21 21:56:46,509 - ERROR - ERROR TRACEBACK:
+2024-07-21 21:56:46,509 - ERROR - ================
+2024-07-21 21:56:46,509 - ERROR - Traceback (most recent call last):
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 111, in send_test_email
+    send_email.send_email("RBD: Test email", message = message, recipient='atanaskolevv01@gmail.com')
+AttributeError: module 'send_email' has no attribute 'send_email'
+
+2024-07-21 21:56:46,509 - ERROR - ================

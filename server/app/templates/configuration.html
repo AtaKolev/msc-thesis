@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h1>Конфигурация</h1>
+        <h4>Ръчно активиране на функция</h4>
+        <small>
+        - Място, където могат да бъдат ръчно активирани функции.</br>
+        </small>
+        </br>  
+
+    <form action="/configuration" method="POST">
+            <select id="mycheckbox" name="mycheckbox">
+                <option>send test email</option>
+                <option>add email recipient</option>
+            </select> *функция - <small><i>името на функцията, която ще бъде стартирана</small></i></br>
+            <input type="password" name="mycheckbox" value=''> *password - <small><i>парола на разработчика</small></i></br> 
+            <input type="sop" name="mycheckbox" value=''> *email, който да бъде добавен към листа с получатели - <small><i>парола на разработчика</small></i></br> 
+        <input type="submit" value="Изпълни"></br> 
+        </form>
+    {{ output | safe}}
+    <small>
+        {{tables_1 | safe}}
+    </small>
+    
+{% endblock %}

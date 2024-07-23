@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <!-- Include the Plotly graph HTML file -->
+     <h2>Данни с изправен лагер за Валов Край - DE</h2>
+    {{ graph_de|safe }}
+    <h2>Данни с Повреден лагер за Валов Край - DE</h2>
+    {{ graph_de_fault|safe }}
+    <h2>Данни с изправен лагер за Вентилаторен Край - FE</h2>
+    {{ graph_fe|safe }}
+    <h2>Данни с Повреден лагер за Вентилаторен Край - FE</h2>
+    {{ graph_fe_fault|safe }}
+</body>
+</html>
+{% endblock %}

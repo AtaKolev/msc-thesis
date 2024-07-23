@@ -1,0 +1,250 @@
+placeholder2024-07-21 21:52:55,281 - ERROR - Exception on /configuration [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 158, in functions
+    return render_template('function.html', title=title, output=output)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\Anaconda\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: function.html
+2024-07-21 21:53:54,068 - ERROR - Exception on /configuration [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 158, in functions
+    return render_template('configuration.html', title=title, output=output)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\Anaconda\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: function.html
+2024-07-21 21:56:33,607 - ERROR - send_test_email: Send test email failed!. Check server_error.log for details.
+2024-07-21 21:56:33,609 - ERROR - Exception on /configuration [POST]
+Traceback (most recent call last):
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 111, in send_test_email
+    send_email.send_email("RBD: Test email", message = message, recipient='atanaskolevv01@gmail.com')
+AttributeError: module 'send_email' has no attribute 'send_email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 150, in functions
+    send_test_email()
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 114, in send_test_email
+    log("send_test_email", "Send test email failed!", error = True)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 66, in log
+    if app.devmode==True:
+AttributeError: 'Flask' object has no attribute 'devmode'
+2024-07-21 21:56:46,508 - ERROR - send_test_email: Send test email failed!. Check server_error.log for details.
+2024-07-21 21:56:46,509 - ERROR - Exception on /configuration [POST]
+Traceback (most recent call last):
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 111, in send_test_email
+    send_email.send_email("RBD: Test email", message = message, recipient='atanaskolevv01@gmail.com')
+AttributeError: module 'send_email' has no attribute 'send_email'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 150, in functions
+    send_test_email()
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 114, in send_test_email
+    log("send_test_email", "Send test email failed!", error = True)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 66, in log
+    if app.devmode==True:
+AttributeError: 'Flask' object has no attribute 'devmode'
+2024-07-21 22:27:59,922 - ERROR - Exception on /cepstrum [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 180, in cepstrum_visualization
+    return render_template('cepstrum.html', title=title, output=output)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\Anaconda\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Repositories\msc-thesis\server\app\templates\cepstrum.html", line 9, in template
+    <title>{{title}}</title>
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2024-07-21 22:32:03,362 - ERROR - Exception on /cepstrum [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 180, in cepstrum_visualization
+    return render_template('cepstrum.html', title=title, output=output)
+  File "D:\Anaconda\lib\site-packages\flask\templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\Anaconda\lib\site-packages\jinja2\loaders.py", line 138, in load
+    code = environment.compile(source, name, filename)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 768, in compile
+    self.handle_exception(source=source_hint)
+  File "D:\Anaconda\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "D:\Repositories\msc-thesis\server\app\templates\cepstrum.html", line 9, in template
+    <title>{{title}}</title>
+jinja2.exceptions.TemplateSyntaxError: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2024-07-21 22:34:25,913 - INFO - RBD: Error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2024-07-21 22:34:25,914 - ERROR - Exception on /cepstrum [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'cepstrum_visualization' did not return a valid response. The function either returned None or ended without a return statement.
+2024-07-21 22:36:12,959 - INFO - RBD: Error: Unexpected end of template. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2024-07-21 22:36:12,959 - ERROR - Exception on /cepstrum [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1538, in finalize_request
+    response = self.make_response(rv)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1701, in make_response
+    raise TypeError(
+TypeError: The view function for 'cepstrum_visualization' did not return a valid response. The function either returned None or ended without a return statement.
+2024-07-21 23:20:13,165 - ERROR - Exception on /diagnostic [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\pandas\core\indexes\base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'DE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 206, in diagnostic
+    anom_df = DataProcessor.diagnostic_model(df)
+  File "D:\Repositories\msc-thesis\server\app\process_data.py", line 77, in diagnostic_model
+    df = anomaly_detection(df, de_model, fe_model)
+  File "D:\Repositories\msc-thesis\server\app\process_data.py", line 62, in anomaly_detection
+    de_signal = df['DE'].reset_index(drop = True)
+  File "D:\Anaconda\lib\site-packages\pandas\core\frame.py", line 3760, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\Anaconda\lib\site-packages\pandas\core\indexes\base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'DE'
+2024-07-21 23:20:53,560 - ERROR - Exception on /diagnostic [GET]
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\pandas\core\indexes\base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas\_libs\index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'DE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\Anaconda\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Repositories\msc-thesis\server\app\app.py", line 206, in diagnostic
+    anom_df = DataProcessor.diagnostic_model(df)
+  File "D:\Repositories\msc-thesis\server\app\process_data.py", line 77, in diagnostic_model
+    df = anomaly_detection(df, de_model, fe_model)
+  File "D:\Repositories\msc-thesis\server\app\process_data.py", line 62, in anomaly_detection
+    de_signal = df['DE'].reset_index(drop = True)
+  File "D:\Anaconda\lib\site-packages\pandas\core\frame.py", line 3760, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\Anaconda\lib\site-packages\pandas\core\indexes\base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'DE'
